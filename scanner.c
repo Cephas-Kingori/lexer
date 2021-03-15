@@ -95,7 +95,7 @@ int main() {
                   source_position++;
                   c = source[source_position];
                   // if the next character after all the numerals is a valid operator like - or + or ; or space
-                  if ((c == 32) || (c == 33) || (c == 38) || (c >= 41 && c <= 45) || (c == 47) || (c >= 59 && c <= 60) || (c == 62) || (c == 93) || (c == 124)) {
+                  if ((c == 32) || (c == 33) || (c == 38) || (c >= 41 && c <= 45) || (c == 47) || (c >= 59 && c <= 60) || (c == 62) || (c == 93) || (c == 124) || (c == 125)) {
                      strcat(symb, "T_INT\t ");
                      strcat(symb, temp);
                      strcat(symb, "\n");
@@ -418,8 +418,6 @@ int main() {
                //that character is not allowed
                ;
                //the semicolon above is important
-
-               printf("errrrrrrr %d\n", c);
 
                size_t j = 0;
                while (!((c == 32) || (c >= 40 && c <= 41) || (c >= 48 && c <= 57) || (c == 59) || (c >= 65 && c <= 90) || (c == 95) || (c >= 97 && c <= 122) || (c == 123) || (c == 125) || (c == '\0'))) {
