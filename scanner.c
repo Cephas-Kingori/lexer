@@ -95,7 +95,7 @@ int main() {
                   source_position++;
                   c = source[source_position];
                   // if the next character after all the numerals is a valid operator like - or + or ; or space
-                  if ((c == 32) || (c == 33) || (c == 38) || (c >= 41 && c <= 43) || (c == 45) || (c == 47) || (c >= 59 && c <= 60) || (c == 62) || (c == 93) || (c == 124)) {
+                  if ((c == 32) || (c == 33) || (c == 38) || (c >= 41 && c <= 45) || (c == 47) || (c >= 59 && c <= 60) || (c == 62) || (c == 93) || (c == 124)) {
                      strcat(symb, "T_INT\t ");
                      strcat(symb, temp);
                      strcat(symb, "\n");
@@ -106,7 +106,7 @@ int main() {
                      //there was an error in what you were scanning
                      //until you find a valid character that should come after a numeral
                      //record it into errors
-                     while (!((c == 32) || (c == 33) || (c == 38) || (c >= 41 && c <= 43) || (c == 45) || (c == 47) || (c >= 59 && c <= 60) || (c == 62) || (c == 93) || (c == 124))) {
+                     while (!((c == 32) || (c == 33) || (c == 38) || (c >= 41 && c <= 45) || (c == 47) || (c >= 59 && c <= 60) || (c == 62) || (c == 93) || (c == 124) || (c == 125) )) {
                         temp[j] = c;
                         char peep;
                         peep = source[source_position + 1];
@@ -337,6 +337,12 @@ int main() {
             case ')':
                strcat(symb, "T_RBRACKET\t )\n");
                break;
+            case '[':
+                strcat(symb, "T_LSQBRACKET\t [\n");
+                break;
+            case ']':
+                strcat(symb, "T_RSQBRACKET\t ]\n");
+                break;
             case '*':
                strcat(symb, "T_MUL\t *\n");
                break;
