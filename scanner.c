@@ -5,7 +5,7 @@
 #include <string.h>
 
 #define MAX_SOURCE_FILE_SIZE 10000
-#define MAX_IDENTIFIER_LEN 32
+#define MAX_IDENTIFIER_LEN 10000
 
 int main() {
 
@@ -26,8 +26,8 @@ int main() {
       source[i + 1] = '\0';
       fclose(stream_ptr);
 
-      printf("%s", source);
-      printf("\n\n\n");
+      // printf("%s", source);
+      // printf("\n\n\n");
 
       /*recognize the lexemes*/
       //store temporarily the lexemes
@@ -201,6 +201,11 @@ int main() {
                      } else
                      if ((a = strcmp(temp, "return")) == 0) {
                         strcat(symb, "T_RETURN\t return\n");
+                        memset(temp, 0, strlen(temp));
+                        break;
+                     }else
+                     if ((a = strcmp(temp, "read")) == 0) {
+                        strcat(symb, "T_READ\t read\n");
                         memset(temp, 0, strlen(temp));
                         break;
                      }

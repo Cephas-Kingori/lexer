@@ -1,0 +1,67 @@
+/*function declaration
+ with no arguments
+*/
+int main ()
+ {
+    int x, y; //var declaration
+
+    char status[10];    //char type
+    status = "yes";    
+    while(status== "yes")
+     {
+print("Enter the first number:- ");
+read(x);
+print("Enter the second number:- \n");
+read(y);
+void multiplication(x, y); //function call
+print("Do you want to continue, yes or no ?\n");
+
+read(status);
+      }
+    int i;
+    int j =5;
+    int arr = [1,2,3,4,5];        //indexing exp
+    //for
+    for(i=0; i<5; i++){
+        arr[i] =arr[i]*j;
+        i++;  
+        j--;                       //post dec and inc op
+    }
+    int a, b, c;
+    ;                     //No operator stmt
+    a = 10;
+    b = 0;
+    c = 11;
+    //if...else
+    if(a == 10){
+        b += 0; 
+    }
+   else {
+        c -= 1;
+   }
+   if(a == 10 && b == 20){
+    c= a+b;
+}else{
+    if(a==0 || b==0){
+    c=a-b;
+}
+}
+int count = 10;
+
+//while
+while(count != 0){
+    count--;    //post dec op
+
+}
+return 0;        //return stmt
+}
+
+//function declaration with 2 arguments
+//type void used
+void multiplication ( int x, int y) 
+{ 
+int mult;
+mult = x * y;  //use of * binary op
+print(mult);
+
+}
